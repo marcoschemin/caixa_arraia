@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Caixa - 12º Arraiá Mater</title>
+  <!-- Materialize CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet" />
+  <!-- Material Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <style>
+    body { background-color: #f5f5f5; }
+    .container { margin-top: 1rem; padding: 0 0.5rem; }
+    .calc-table { background: #fff; border-radius: 8px; min-width: 480px; }
+    .table-responsive { overflow-x: auto; }
+    input[type=number] { max-width: 40px; }
+    tfoot td { padding: 8px; }
+    .flow-text { font-size: 1.5rem; }
+    .quantity-field { display: flex; align-items: center; justify-content: center; }
+    .quantity-field .btn-flat {
+      margin: 0 4px;
+      padding: 0;
+      width: 36px;
+      height: 36px;
+    }
+    .quantity-field .material-icons {
+      font-size: 24px;
+      line-height: 36px;
+    }
+    .item-name { font-weight: bold; }
+    .item-ref { display: block; font-size: 0.8rem; color: #757575; }
+    .logo { max-width: 140px; margin-bottom: 1rem; display: block; margin-left: auto; margin-right: auto; }
+    @media only screen and (max-width: 600px) {
+      .calc-table { min-width: auto; }
+      input[type=number] { max-width: 100%; }
+      .card-content { padding: 8px; }
+      .flow-text { font-size: 1.2rem; }
+      .logo { max-width: 100px; }
+      .quantity-field .btn-flat {
+        width: 32px;
+        height: 32px;
+      }
+      .quantity-field .material-icons {
+        font-size: 20px;
+        line-height: 32px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="card z-depth-2">
+      <div class="card-content">
+        <!-- Logotipo no topo -->
+        <img src="IMG_1963.jpeg" alt="Logotipo" class="logo" />
+        <span class="card-title center-align">Caixa - 12º Arraiá Mater</span>
+        <div class="table-responsive">
+          <table id="tabela-produtos" class="striped highlight calc-table">
+            <thead>
+              <tr>
+                <th>Produto</th>
+                <th>Preço (R$)</th>
+                <th>Qtd</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+            <tfoot>
+              <tr>
+                <td colspan="3" class="center-align">
+                  <span class="flow-text">Total Geral (R$): <span id="total-geral">0.00</span></span>
+                </td>
+              </tr>
+              <tr>
+                <td colspan="3" class="center-align">
+                  <span class="flow-text">Valor Pago (R$):
+                    <input type="number" id="valor-pago" min="0" class="validate" style="font-size:1.5rem; text-align:center; width: 100px; margin-left: 0.5rem;"/>
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td colspan="3" class="center-align">
+                  <span class="flow-text">Troco (R$): <span id="troco">0.00</span></span>
+                </td>
+              </tr>
+              <tr>
+                <td colspan="3" class="center-align">
+                  <a id="btn-limpar" class="btn waves-effect waves-light red lighten-1">
+                    <i class="material-icons left">refresh</i>Limpar
+                  </a>
+                </td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Materialize JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      fetch("products.json")
+        .then((res) => res.json())
+        .then((produtos) => {
+          const grupos = produtos.reduce((acc, p) => {
+            (acc[p.Tipo] = acc[p.Tipo] || []).push(p);
+            return acc;
+          }, {});
+          const tbody = document.querySelector("#tabela-produtos tbody");
+
+          function recalcular() {
+            let totalGeral = 0;
+            document.querySelectorAll(".linha-produto").forEach((linha) => {
+              const preco = parseFloat(linha.dataset.preco) || 0;
+              const qtd = parseInt(linha.querySelector(".qtd").value) || 0;
+              totalGeral += preco * qtd;
+            });
+            document.getElementById("total-geral").textContent = totalGeral.toFixed(2);
+            const pago = parseFloat(document.getElementById("valor-pago").value) || 0;
+            document.getElementById("troco").textContent = (pago - totalGeral).toFixed(2);
+          }
+
+          Object.entries(grupos).forEach(([tipo, items]) => {
+            const trg = document.createElement("tr");
+            const tdg = document.createElement("td");
+            tdg.colSpan = 3;
+            tdg.className = "blue-text text-darken-2";
+            tdg.innerHTML = `<strong>${tipo}</strong>`;
+            trg.appendChild(tdg);
+            tbody.appendChild(trg);
+
+            items.forEach((p) => {
+              const tr = document.createElement("tr");
+              tr.className = "linha-produto";
+              tr.dataset.preco = p.Preco;
+              tr.innerHTML = `
+                <td>
+                  <span class="item-name">${p.Nome}</span>
+                  <span class="item-ref">${p.Referencia || ''}</span>
+                </td>
+                <td>${p.Preco.toFixed(2)}</td>
+                <td>
+                  <div class="quantity-field">
+                    <a class="btn-flat qty-decrease"><i class="material-icons">remove</i></a>
+                    <input type="number" min="0" step="1" class="qtd center-align" value="0" style="width: 40px; font-size:1rem;" inputmode="numeric" pattern="\d*" />
+                    <a class="btn-flat qty-increase"><i class="material-icons">add</i></a>
+                  </div>
+                </td>
+              `;
+              tbody.appendChild(tr);
+            });
+          });
+
+          document.body.addEventListener("click", (e) => {
+            const incBtn = e.target.closest(".qty-increase");
+            const decBtn = e.target.closest(".qty-decrease");
+            if (incBtn || decBtn) {
+              const container = (incBtn || decBtn).closest(".quantity-field");
+              const input = container.querySelector(".qtd");
+              let val = parseInt(input.value) || 0;
+              val = incBtn ? val + 1 : Math.max(val - 1, 0);
+              input.value = val;
+              recalcular();
+            }
+          });
+
+          document.body.addEventListener("input", recalcular);
+          document.getElementById("btn-limpar").addEventListener("click", () => {
+            document.querySelectorAll(".qtd, #valor-pago").forEach((el) => (el.value = ""));
+            recalcular();
+          });
+
+          recalcular();
+        });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,224 @@
+[
+  {
+    "Tipo": "Comidas",
+    "Nome": "Cachorro-quente",
+    "Referencia": "",
+    "Preco": 10
+  },
+  {
+    "Tipo": "Comidas",
+    "Nome": "Sobremesa",
+    "Referencia": "",
+    "Preco": 8
+  },
+  {
+    "Tipo": "Comidas",
+    "Nome": "Foundeau",
+    "Referencia": "",
+    "Preco": 12
+  },
+  {
+    "Tipo": "Comidas",
+    "Nome": "Espeto de Morango",
+    "Referencia": "",
+    "Preco": 12
+  },
+  {
+    "Tipo": "Comidas",
+    "Nome": "Pernil",
+    "Referencia": "",
+    "Preco": 15
+  },
+  {
+    "Tipo": "Comidas",
+    "Nome": "Tapioca",
+    "Referencia": "",
+    "Preco": 12
+  },
+  {
+    "Tipo": "Comidas",
+    "Nome": "Crepe Vila",
+    "Referencia": "",
+    "Preco": 10
+  },
+  {
+    "Tipo": "Comidas",
+    "Nome": "Batata-frita",
+    "Referencia": "",
+    "Preco": 12
+  },
+  {
+    "Tipo": "Comidas",
+    "Nome": "Caldos",
+    "Referencia": "",
+    "Preco": 10
+  },
+  {
+    "Tipo": "Comidas",
+    "Nome": "Algodão doce",
+    "Referencia": "",
+    "Preco": 10
+  },
+  {
+    "Tipo": "Comidas",
+    "Nome": "Crepe da praça",
+    "Referencia": "",
+    "Preco": 12
+  },
+  {
+    "Tipo": "Comidas",
+    "Nome": "Pastel Caipira",
+    "Referencia": "5 unidades",
+    "Preco": 10
+  },
+  {
+    "Tipo": "Comidas",
+    "Nome": "Pizza",
+    "Referencia": "",
+    "Preco": 15
+  },
+  {
+    "Tipo": "Comidas",
+    "Nome": "Pipoca doce",
+    "Referencia": "Pequeno",
+    "Preco": 10
+  },
+  {
+    "Tipo": "Comidas",
+    "Nome": "Pipoca doce",
+    "Referencia": "Grande",
+    "Preco": 15
+  },
+  {
+    "Tipo": "Comidas",
+    "Nome": "Pastel",
+    "Referencia": "",
+    "Preco": 12
+  },
+  {
+    "Tipo": "Comidas",
+    "Nome": "Arroz Doce",
+    "Referencia": "",
+    "Preco": 8
+  },
+  {
+    "Tipo": "Comidas",
+    "Nome": "Churros",
+    "Referencia": "",
+    "Preco": 12
+  },
+  {
+    "Tipo": "Comidas",
+    "Nome": "Milho",
+    "Referencia": "Milho",
+    "Preco": 12
+  },
+  {
+    "Tipo": "Comidas",
+    "Nome": "Milho",
+    "Referencia": "Pamonha",
+    "Preco": 12
+  },
+  {
+    "Tipo": "Comidas",
+    "Nome": "Milho",
+    "Referencia": "Canjica",
+    "Preco": 10
+  },
+  {
+    "Tipo": "Comidas",
+    "Nome": "Milho",
+    "Referencia": "Curau",
+    "Preco": 10
+  },
+  {
+    "Tipo": "Comidas",
+    "Nome": "Churrasco",
+    "Referencia": "Carne",
+    "Preco": 12
+  },
+  {
+    "Tipo": "Comidas",
+    "Nome": "Churrasco",
+    "Referencia": "Frango/Linguiça",
+    "Preco": 10
+  },
+  {
+    "Tipo": "Bebidas",
+    "Nome": "Refrigerante",
+    "Referencia": "",
+    "Preco": 10
+  },
+  {
+    "Tipo": "Bebidas",
+    "Nome": "Água ",
+    "Referencia": "",
+    "Preco": 5
+  },
+  {
+    "Tipo": "Bebidas",
+    "Nome": "Sucos naturais",
+    "Referencia": "Copo",
+    "Preco": 8
+  },
+  {
+    "Tipo": "Bebidas",
+    "Nome": "Sucos naturais",
+    "Referencia": "Garrafa",
+    "Preco": 12
+  },
+  {
+    "Tipo": "Bebidas",
+    "Nome": "Caldo de cana",
+    "Referencia": "Copo",
+    "Preco": 8
+  },
+  {
+    "Tipo": "Bebidas",
+    "Nome": "Caldo de cana",
+    "Referencia": "Garrafa",
+    "Preco": 12
+  },
+  {
+    "Tipo": "Bebidas",
+    "Nome": "Suco",
+    "Referencia": "",
+    "Preco": 10
+  },
+  {
+    "Tipo": "Bebidas",
+    "Nome": "Bebidas quentes",
+    "Referencia": "",
+    "Preco": 10
+  },
+  {
+    "Tipo": "Brinquedos",
+    "Nome": "Touro ",
+    "Referencia": "",
+    "Preco": 10
+  },
+  {
+    "Tipo": "Brinquedos",
+    "Nome": "Brinquedos ",
+    "Referencia": "",
+    "Preco": 6
+  },
+  {
+    "Tipo": "Brinquedos",
+    "Nome": "Barracas de brinquedos ",
+    "Referencia": "",
+    "Preco": 6
+  },
+  {
+    "Tipo": "Brinquedos",
+    "Nome": "Correio Elegante",
+    "Referencia": "",
+    "Preco": 5
+  },
+  {
+    "Tipo": "Brinquedos",
+    "Nome": "Cadeia",
+    "Referencia": "",
+    "Preco": 5
+  }
+]
