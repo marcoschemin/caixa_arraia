@@ -76,7 +76,7 @@
               <tr>
                 <td colspan="3" class="center-align">
                   <span class="flow-text">Valor Pago (R$):
-                    <input type="number" id="valor-pago" min="0" class="validate" style="text-align:center; margin-left: 0.5rem;"/>
+                    <input type="text" id="valor-pago" inputmode="numeric" pattern="[0-9]*" class="validate" oninput="this.value=this.value.replace(/[^0-9]/g,'');" style="text-align:center; margin-left: 0.5rem;"/>
                   </span>
                 </td>
               </tr>
