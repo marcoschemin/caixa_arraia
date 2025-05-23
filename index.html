@@ -14,6 +14,8 @@
     .calc-table { background: #fff; border-radius: 8px; min-width: 480px; }
     .table-responsive { overflow-x: auto; }
     input[type=number] { max-width: 40px; }
+    /* Ajuste para o campo Valor Pago */
+    #valor-pago { width: 200px !important; font-size: 2rem !important; }
     tfoot td { padding: 8px; }
     .flow-text { font-size: 1.5rem; }
     .quantity-field { display: flex; align-items: center; justify-content: center; }
@@ -44,6 +46,7 @@
         font-size: 20px;
         line-height: 32px;
       }
+      #valor-pago { width: 100% !important; max-width: 150px; font-size: 1.5rem !important; }
     }
   </style>
 </head>
@@ -73,7 +76,7 @@
               <tr>
                 <td colspan="3" class="center-align">
                   <span class="flow-text">Valor Pago (R$):
-                    <input type="number" id="valor-pago" min="0" class="validate" style="font-size:1.5rem; text-align:center; width: 160px; margin-left: 0.5rem;"/>
+                    <input type="number" id="valor-pago" min="0" class="validate" style="text-align:center; margin-left: 0.5rem;"/>
                   </span>
                 </td>
               </tr>
