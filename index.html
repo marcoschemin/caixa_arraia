@@ -1,192 +1,196 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Caixa - 13º Arraiá Mater</title>
-  <!-- Materialize CSS -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet" />
-  <!-- Material Icons -->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-  <style>
-    body { background-color: #f5f5f5; }
-    .container { margin-top: 1rem; padding: 0 0.5rem; }
-    .calc-table { background: #fff; border-radius: 8px; min-width: 480px; }
-    .table-responsive { overflow-x: auto; }
-    input[type=number] { max-width: 40px; }
-    /* Ajuste para o campo Valor Pago */
-    #valor-pago { width: 200px !important; font-size: 2rem !important; }
-    tfoot td { padding: 8px; }
-    .flow-text { font-size: 1.5rem; }
-    .quantity-field { display: flex; align-items: center; justify-content: center; }
-    .quantity-field .btn-flat {
-      margin: 0 4px;
-      padding: 0;
-      width: 36px;
-      height: 36px;
-    }
-    .quantity-field .material-icons {
-      font-size: 24px;
-      line-height: 36px;
-    }
-    .item-name { font-weight: bold; }
-    .item-ref { display: block; font-size: 0.8rem; color: #757575; }
-    .logo { max-width: 140px; margin-bottom: 1rem; display: block; margin-left: auto; margin-right: auto; }
-    @media only screen and (max-width: 600px) {
-      .calc-table { min-width: auto; }
-      input[type=number] { max-width: 100%; }
-      .card-content { padding: 8px; }
-      .flow-text { font-size: 1.2rem; }
-      .logo { max-width: 100px; }
-      .quantity-field .btn-flat {
-        width: 32px;
-        height: 32px;
-      }
-      .quantity-field .material-icons {
-        font-size: 20px;
-        line-height: 32px;
-      }
-      #valor-pago { width: 100% !important; max-width: 150px; font-size: 1.5rem !important; }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Caixa - 13º Arraiá Mater</title>
+    <style>
+        body { 
+            font-family: system-ui, sans-serif; margin: 0; padding: 0; 
+            display: flex; flex-direction: column; height: 100vh; 
+            background-image: url('fundo.jpg'); background-size: cover; 
+            background-position: center; background-attachment: fixed;
+        }
+        header { 
+            background: rgba(13, 110, 253, 0.9); color: white; padding: 16px; 
+            font-size: 22px; font-weight: bold; text-align: center; 
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5); backdrop-filter: blur(4px);
+        }
+        #product-list { flex: 1; overflow-y: auto; padding: 16px; padding-bottom: 250px; }
+        
+        .category-header {
+            background: rgba(33, 37, 41, 0.9); color: white; padding: 8px 16px;
+            margin: 24px 0 12px 0; border-radius: 8px; font-weight: bold;
+            font-size: 18px; backdrop-filter: blur(4px); box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        .category-header:first-child { margin-top: 0; }
+        
+        .product { 
+            display: flex; justify-content: space-between; align-items: center; 
+            background: rgba(255, 255, 255, 0.95); padding: 16px; margin-bottom: 12px; 
+            border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.3); 
+        }
+        .info { flex: 1; }
+        .name { font-size: 18px; font-weight: bold; margin: 0 0 2px 0; color: #212529; }
+        .ref { font-size: 14px; color: #6c757d; margin: 0 0 6px 0; }
+        .price { color: #198754; font-size: 16px; margin: 0; font-weight: bold; }
+        
+        .controls { display: flex; align-items: center; gap: 12px; }
+        .btn-qty { 
+            width: 40px; height: 40px; border: none; border-radius: 50%; 
+            font-size: 24px; font-weight: bold; color: white; cursor: pointer; 
+            display: flex; align-items: center; justify-content: center; touch-action: manipulation; 
+        }
+        .btn-minus { background: #dc3545; }
+        .btn-plus { background: #0d6efd; }
+        .btn-minus:disabled { background: #e9ecef; color: #adb5bd; cursor: not-allowed; }
+        .qty { font-size: 20px; font-weight: bold; width: 30px; text-align: center; color: #212529; }
+        
+        footer { 
+            background: rgba(255, 255, 255, 0.95); padding: 20px 16px; 
+            box-shadow: 0 -4px 15px rgba(0,0,0,0.2); position: fixed; 
+            bottom: 0; width: 100%; box-sizing: border-box; 
+            border-top-left-radius: 16px; border-top-right-radius: 16px; backdrop-filter: blur(4px);
+        }
+        .total-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+        .total-label { font-size: 20px; font-weight: bold; color: #495057; }
+        .total-value { font-size: 32px; font-weight: bold; color: #198754; }
+        
+        .payment-row { display: flex; gap: 16px; margin-bottom: 16px; align-items: flex-end; }
+        .input-group { flex: 3; }
+        .input-group label { display: block; font-size: 14px; font-weight: bold; color: #495057; margin-bottom: 8px; }
+        .input-group input { 
+            width: 100%; padding: 12px; font-size: 18px; font-weight: bold;
+            border: 2px solid #ced4da; border-radius: 8px; box-sizing: border-box; text-align: center;
+        }
+        .change-display { flex: 2; text-align: right; }
+        .change-label { font-size: 14px; font-weight: bold; color: #495057; margin-bottom: 4px; }
+        .change-value { font-size: 28px; font-weight: bold; color: #0d6efd; }
+        .change-value.error { color: #dc3545; }
+        
+        .btn-finish { 
+            width: 100%; padding: 16px; background: #dc3545; color: white; 
+            border: none; border-radius: 8px; font-size: 20px; font-weight: bold; 
+            cursor: pointer; touch-action: manipulation; 
+        }
+        .btn-finish:disabled { background: #e9ecef; color: #adb5bd; cursor: not-allowed; }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <div class="card z-depth-2">
-      <div class="card-content">
-        <!-- Logotipo no topo -->
-        <img src="logo.png" alt="Logotipo" class="logo" />
-        <span class="card-title center-align">Caixa - 13º Arraiá Mater</span>
-        <div class="table-responsive">
-          <table id="tabela-produtos" class="striped highlight calc-table">
-            <thead>
-              <tr>
-                <th>Produto</th>
-                <th>Preço (R$)</th>
-                <th>Qtd</th>
-              </tr>
-            </thead>
-            <tbody></tbody>
-            <tfoot>
-              <tr>
-                <td colspan="3" class="center-align">
-                  <span class="flow-text">Total Geral (R$): <span id="total-geral">0.00</span></span>
-                </td>
-              </tr>
-              <tr>
-                <td colspan="3" class="center-align">
-                  <span class="flow-text">Valor Pago (R$):
-                    <input type="tel"
-                           id="valor-pago"
-                           inputmode="decimal"
-                           pattern="\d+(\.\d{0,2})?"
-                           class="validate"
-                           oninput="this.value = this.value
-                             .replace(/[^\d\.]/g,'')
-                             .replace(/(\..*)\./,'$1')
-                             .replace(/(\d+\.\d{2}).*/,'$1');"
-                           style="text-align:center; margin-left: 0.5rem;"/>
-                  </span>
-                </td>
-              </tr>
-              <tr>
-                <td colspan="3" class="center-align">
-                  <span class="flow-text">Troco (R$): <span id="troco">0.00</span></span>
-                </td>
-              </tr>
-              <tr>
-                <td colspan="3" class="center-align">
-                  <a id="btn-limpar" class="btn waves-effect waves-light red lighten-1">
-                    <i class="material-icons left">refresh</i>Limpar
-                  </a>
-                </td>
-              </tr>
-            </tfoot>
-          </table>
+    <header>Caixa - 13º Arraiá Mater</header>
+    <div id="product-list"></div>
+    <footer>
+        <div class="total-row">
+            <span class="total-label">TOTAL:</span>
+            <span class="total-value" id="total-value">R$ 0.00</span>
         </div>
-      </div>
-    </div>
-  </div>
+        <div class="payment-row">
+            <div class="input-group">
+                <label>Valor Pago (R$)</label>
+                <input type="number" id="received-value" step="0.01" placeholder="0.00" inputmode="decimal">
+            </div>
+            <div class="change-display">
+                <div class="change-label">TROCO:</div>
+                <div class="change-value" id="change-value">R$ 0.00</div>
+            </div>
+        </div>
+        <button class="btn-finish" id="btn-finish" disabled>FINALIZAR / ZERAR</button>
+    </footer>
 
-  <!-- Materialize JS -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      fetch("products.json")
-        .then((res) => res.json())
-        .then((produtos) => {
-          const grupos = produtos.reduce((acc, p) => {
-            (acc[p.Tipo] = acc[p.Tipo] || []).push(p);
-            return acc;
-          }, {});
-          const tbody = document.querySelector("#tabela-produtos tbody");
+    <script>
+        let produtos = [];
+        const productListEl = document.getElementById('product-list');
+        const totalValueEl = document.getElementById('total-value');
+        const receivedInput = document.getElementById('received-value');
+        const changeValueEl = document.getElementById('change-value');
+        const btnFinish = document.getElementById('btn-finish');
 
-          function recalcular() {
-            let totalGeral = 0;
-            document.querySelectorAll(".linha-produto").forEach((linha) => {
-              const preco = parseFloat(linha.dataset.preco) || 0;
-              const qtd = parseInt(linha.querySelector(".qtd").value) || 0;
-              totalGeral += preco * qtd;
+        fetch('products.json')
+            .then(res => res.json())
+            .then(data => {
+                produtos = data.map((p, index) => ({
+                    id: index,
+                    nome: p.Nome,
+                    referencia: p.Referencia,
+                    preco: p.Preco,
+                    tipo: p.Tipo,
+                    quantidade: 0
+                }));
+                renderProducts();
             });
-            document.getElementById("total-geral").textContent = totalGeral.toFixed(2);
-            const pagoVal = document.getElementById("valor-pago").value || '0';
-            const pago = parseFloat(pagoVal) || 0;
-            document.getElementById("troco").textContent = (pago - totalGeral).toFixed(2);
-          }
 
-          Object.entries(grupos).forEach(([tipo, items]) => {
-            const trg = document.createElement("tr");
-            const tdg = document.createElement("td");
-            tdg.colSpan = 3;
-            tdg.className = "blue-text text-darken-2";
-            tdg.innerHTML = `<strong>${tipo}</strong>`;
-            trg.appendChild(tdg);
-            tbody.appendChild(trg);
+        function renderProducts() {
+            productListEl.innerHTML = '';
+            
+            const grupos = produtos.reduce((acc, p) => {
+                (acc[p.tipo] = acc[p.tipo] || []).push(p);
+                return acc;
+            }, {});
 
-            items.forEach((p) => {
-              const tr = document.createElement("tr");
-              tr.className = "linha-produto";
-              tr.dataset.preco = p.Preco;
-              tr.innerHTML = `
-                <td>
-                  <span class="item-name">${p.Nome}</span>
-                  <span class="item-ref">${p.Referencia || ''}</span>
-                </td>
-                <td>${p.Preco.toFixed(2)}</td>
-                <td>
-                  <div class="quantity-field">
-                    <a class="btn-flat qty-decrease"><i class="material-icons">remove</i></a>
-                    <input type="number" min="0" step="1" class="qtd center-align" value="0" style="width: 40px; font-size:1rem;" inputmode="numeric" pattern="\d*" />
-                    <a class="btn-flat qty-increase"><i class="material-icons">add</i></a>
-                  </div>
-                </td>
-              `;
-              tbody.appendChild(tr);
-            });
-          });
+            for (const [tipo, items] of Object.entries(grupos)) {
+                const header = document.createElement('div');
+                header.className = 'category-header';
+                header.textContent = tipo;
+                productListEl.appendChild(header);
 
-          document.body.addEventListener("click", (e) => {
-            const incBtn = e.target.closest(".qty-increase");
-            const decBtn = e.target.closest(".qty-decrease");
-            if (incBtn || decBtn) {
-              const container = (incBtn || decBtn).closest(".quantity-field");
-              const input = container.querySelector(".qtd");
-              let val = parseInt(input.value) || 0;
-              val = incBtn ? val + 1 : Math.max(val - 1, 0);
-              input.value = val;
-              recalcular();
+                items.forEach(p => {
+                    const div = document.createElement('div');
+                    div.className = 'product';
+                    const refHtml = p.referencia ? `<p class="ref">${p.referencia}</p>` : '';
+                    div.innerHTML = `
+                        <div class="info">
+                            <p class="name">${p.nome}</p>
+                            ${refHtml}
+                            <p class="price">R$ ${p.preco.toFixed(2)}</p>
+                        </div>
+                        <div class="controls">
+                            <button class="btn-qty btn-minus" onclick="updateQty(${p.id}, -1)" ${p.quantidade === 0 ? 'disabled' : ''}>-</button>
+                            <span class="qty">${p.quantidade}</span>
+                            <button class="btn-qty btn-plus" onclick="updateQty(${p.id}, 1)">+</button>
+                        </div>
+                    `;
+                    productListEl.appendChild(div);
+                });
             }
-          });
+            updateTotals();
+        }
 
-          document.body.addEventListener("input", recalcular);
-          document.getElementById("btn-limpar").addEventListener("click", () => {
-            document.querySelectorAll(".qtd, #valor-pago").forEach((el) => (el.value = ""));
-            recalcular();
-          });
+        function updateQty(id, delta) {
+            const produto = produtos.find(p => p.id === id);
+            if (produto) {
+                produto.quantidade += delta;
+                if (produto.quantidade < 0) produto.quantidade = 0;
+                renderProducts();
+            }
+        }
 
-          recalcular();
+        function updateTotals() {
+            const total = produtos.reduce((sum, p) => sum + (p.preco * p.quantidade), 0);
+            totalValueEl.textContent = `R$ ${total.toFixed(2)}`;
+
+            const received = parseFloat(receivedInput.value.replace(',', '.')) || 0;
+            let change = received - total;
+
+            if (total === 0) change = 0;
+
+            changeValueEl.textContent = `R$ ${(change > 0 ? change : 0).toFixed(2)}`;
+
+            if (received > 0 && received < total && total > 0) {
+                changeValueEl.classList.add('error');
+                btnFinish.disabled = true;
+            } else {
+                changeValueEl.classList.remove('error');
+                btnFinish.disabled = total === 0;
+            }
+        }
+
+        receivedInput.addEventListener('input', updateTotals);
+
+        btnFinish.addEventListener('click', () => {
+            produtos.forEach(p => p.quantidade = 0);
+            receivedInput.value = '';
+            renderProducts();
         });
-    });
-  </script>
+    </script>
 </body>
 </html>
