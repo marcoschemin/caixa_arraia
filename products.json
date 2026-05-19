@@ -116,25 +116,25 @@
   {
     "Tipo": "Comidas",
     "Nome": "Milho",
-    "Referencia": "Milho",
+    "Referencia": "",
     "Preco": 12
   },
   {
     "Tipo": "Comidas",
-    "Nome": "Milho",
-    "Referencia": "Pamonha",
+    "Nome": "Pamonha",
+    "Referencia": "",
     "Preco": 12
   },
   {
     "Tipo": "Comidas",
-    "Nome": "Milho",
-    "Referencia": "Canjica",
+    "Nome": "Canjica",
+    "Referencia": "",
     "Preco": 10
   },
   {
     "Tipo": "Comidas",
-    "Nome": "Milho",
-    "Referencia": "Curau",
+    "Nome": "Curau",
+    "Referencia": "",
     "Preco": 10
   },
   {
@@ -181,19 +181,19 @@
   },
   {
     "Tipo": "Brinquedos",
-    "Nome": "Touro ",
+    "Nome": "Touro",
     "Referencia": "",
     "Preco": 10
   },
   {
     "Tipo": "Brinquedos",
-    "Nome": "Brinquedos ",
+    "Nome": "Brinquedos",
     "Referencia": "",
     "Preco": 8
   },
   {
     "Tipo": "Brinquedos",
-    "Nome": "Barracas de brinquedos ",
+    "Nome": "Barracas de brinquedos",
     "Referencia": "",
     "Preco": 8
   },
