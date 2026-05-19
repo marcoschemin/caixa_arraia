@@ -3,19 +3,19 @@
     "Tipo": "Comidas",
     "Nome": "Cachorro-quente",
     "Referencia": "",
-    "Preco": 10
+    "Preco": 12
   },
   {
     "Tipo": "Comidas",
     "Nome": "Sobremesa",
     "Referencia": "",
-    "Preco": 8
+    "Preco": 10
   },
   {
     "Tipo": "Comidas",
     "Nome": "Foundeau",
     "Referencia": "",
-    "Preco": 12
+    "Preco": 15
   },
   {
     "Tipo": "Comidas",
@@ -27,7 +27,7 @@
     "Tipo": "Comidas",
     "Nome": "Pernil",
     "Referencia": "",
-    "Preco": 15
+    "Preco": 20
   },
   {
     "Tipo": "Comidas",
@@ -45,7 +45,7 @@
     "Tipo": "Comidas",
     "Nome": "Batata-frita",
     "Referencia": "",
-    "Preco": 12
+    "Preco": 15
   },
   {
     "Tipo": "Comidas",
@@ -105,7 +105,7 @@
     "Tipo": "Comidas",
     "Nome": "Churros",
     "Referencia": "",
-    "Preco": 12
+    "Preco": 10
   },
   {
     "Tipo": "Comidas",
@@ -157,32 +157,14 @@
   },
   {
     "Tipo": "Bebidas",
-    "Nome": "Sucos naturais",
-    "Referencia": "Copo",
-    "Preco": 8
-  },
-  {
-    "Tipo": "Bebidas",
-    "Nome": "Sucos naturais",
-    "Referencia": "Garrafa",
-    "Preco": 12
-  },
-  {
-    "Tipo": "Bebidas",
-    "Nome": "Caldo de cana",
-    "Referencia": "Copo",
-    "Preco": 8
-  },
-  {
-    "Tipo": "Bebidas",
-    "Nome": "Caldo de cana",
+    "Nome": "Suco Natura",
     "Referencia": "Garrafa",
     "Preco": 12
   },
   {
     "Tipo": "Bebidas",
     "Nome": "Suco",
-    "Referencia": "",
+    "Referencia": "Del Valle",
     "Preco": 10
   },
   {
@@ -201,13 +183,13 @@
     "Tipo": "Brinquedos",
     "Nome": "Brinquedos ",
     "Referencia": "",
-    "Preco": 6
+    "Preco": 8
   },
   {
     "Tipo": "Brinquedos",
     "Nome": "Barracas de brinquedos ",
     "Referencia": "",
-    "Preco": 6
+    "Preco": 8
   },
   {
     "Tipo": "Brinquedos",
