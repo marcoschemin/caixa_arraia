@@ -61,7 +61,7 @@
   },
   {
     "Tipo": "Comidas",
-    "Nome": "Crepe da praça",
+    "Nome": "Crepe da Praça",
     "Referencia": "",
     "Preco": 12
   },
@@ -103,9 +103,15 @@
   },
   {
     "Tipo": "Comidas",
-    "Nome": "Churros",
+    "Nome": "Churros Mater",
     "Referencia": "",
     "Preco": 10
+  },
+  {
+    "Tipo": "Comidas",
+    "Nome": "Churros Vovó Adelina",
+    "Referencia": "",
+    "Preco": 13
   },
   {
     "Tipo": "Comidas",
