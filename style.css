@@ -145,13 +145,13 @@ header.convidados {
 }
 
 /* ==========================================
-   RODAPÉ / TOTALIZADOR (OTIMIZADO -30% A -50%)
+   RODAPÉ / TOTALIZADOR (BOX COMPACTO COM FONTE 18-20px)
    ========================================== */
 footer {
   flex-shrink: 0;
   width: 100%;
   background: rgba(255, 255, 255, 0.95);
-  padding: 8px 12px; /* Redução do espaço interno */
+  padding: 8px 12px; /* Mantém o box achatado */
   box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.2);
   box-sizing: border-box;
   border-top-left-radius: 12px;
@@ -165,17 +165,17 @@ footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 4px; /* Margem mínima */
+  margin-bottom: 4px;
 }
 
 .total-label {
-  font-size: 18px; 
+  font-size: 18px; /* Ajustado para o tamanho solicitado */
   font-weight: bold;
   color: #495057;
 }
 
 .total-value {
-  font-size: 20px; 
+  font-size: 20px; /* Ajustado para o tamanho solicitado */
   font-weight: bold;
   color: #198754;
 }
@@ -193,7 +193,7 @@ footer {
 
 .input-group label {
   display: block;
-  font-size: 14px; 
+  font-size: 12px; 
   font-weight: bold;
   color: #495057;
   margin-bottom: 2px; 
@@ -201,8 +201,8 @@ footer {
 
 .input-group input {
   width: 100%;
-  padding: 6px; /* Input mais compacto */
-  font-size: 20px; /* Travado em 16px para evitar auto-zoom no iOS */
+  padding: 6px; 
+  font-size: 16px; /* Mantido em 16px estritamente para evitar o auto-zoom nativo do Safari/iOS */
   font-weight: bold;
   border: 2px solid #ced4da;
   border-radius: 6px;
@@ -216,14 +216,14 @@ footer {
 }
 
 .change-label {
-  font-size: 18px; 
+  font-size: 12px; 
   font-weight: bold;
   color: #495057;
   margin-bottom: 0; 
 }
 
 .change-value {
-  font-size: 20px; 
+  font-size: 20px; /* Ajustado para o tamanho solicitado */
   font-weight: bold;
   color: #0d6efd;
 }
@@ -234,11 +234,11 @@ footer {
 
 .btn-finish, .btn-reset {
   width: 100%;
-  padding: 10px; /* Botão mais fino */
+  padding: 10px; 
   color: white;
   border: none;
   border-radius: 6px;
-  font-size: 16px; 
+  font-size: 18px; /* Ajustado para a faixa solicitada */
   font-weight: bold;
   cursor: pointer;
   touch-action: manipulation;
