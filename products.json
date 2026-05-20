@@ -150,6 +150,42 @@
     "Preco": 10
   },
   {
+    "Tipo": "Comidas",
+    "Nome": "Castanha de Caju",
+    "Referencia": "Doce/Salgada",
+    "Preco": 20
+  },
+  {
+    "Tipo": "Comidas",
+    "Nome": "Amendoim",
+    "Referencia": "Doce/Salgado",
+    "Preco": 10
+  },
+  {
+    "Tipo": "Comidas",
+    "Nome": "Coquinho Caramelizado",
+    "Referencia": "",
+    "Preco": 10
+  },
+  {
+    "Tipo": "Comidas",
+    "Nome": "Cocada",
+    "Referencia": "",
+    "Preco": 15
+  },
+  {
+    "Tipo": "Comidas",
+    "Nome": "Batata Chip",
+    "Referencia": "",
+    "Preco": 20
+  },
+  {
+    "Tipo": "Comidas",
+    "Nome": "Quebra-Queixo",
+    "Referencia": "",
+    "Preco": 15
+  },
+  {
     "Tipo": "Bebidas",
     "Nome": "Refrigerante",
     "Referencia": "",
