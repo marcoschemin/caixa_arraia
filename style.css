@@ -1,0 +1,263 @@
+body { 
+  font-family: system-ui, sans-serif; 
+  margin: 0; 
+  padding: 0; 
+  display: flex; 
+  flex-direction: column; 
+  height: 100vh; 
+  height: 100dvh; 
+  background-image: url('fundo.jpg'); 
+  background-size: cover; 
+  background-position: center; 
+  background-attachment: fixed;
+  overflow: hidden; 
+}
+
+header {
+  background: rgba(13, 110, 253, 0.9);
+  color: white;
+  padding: 16px;
+  font-size: 22px;
+  font-weight: bold;
+  text-align: center;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  flex-shrink: 0; 
+}
+
+/* Cabeçalho vermelho para a tela de convidados */
+header.convidados {
+  background: rgba(220, 53, 69, 0.9);
+}
+
+#scroll-area { 
+  flex: 1; 
+  min-height: 0; 
+  overflow-y: auto; 
+  padding: 16px; 
+  padding-bottom: 24px; 
+  -webkit-overflow-scrolling: touch; 
+  overscroll-behavior: contain; 
+}
+
+#product-list {
+  padding: 0;
+}
+
+.logo-evento {
+  max-width: 140px;
+  display: block;
+  margin: 0 auto 16px auto;
+  filter: drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.5));
+}
+
+.category-header {
+  background: rgba(33, 37, 41, 0.9);
+  color: white;
+  padding: 8px 16px;
+  margin: 24px 0 12px 0;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 18px;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Cabeçalho de categoria azul para a tela de convidados */
+.category-header.convidados {
+  background: rgba(13, 110, 253, 0.9);
+}
+
+.category-header:first-child {
+  margin-top: 0;
+}
+
+.product {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 16px;
+  margin-bottom: 12px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.info {
+  flex: 1;
+}
+
+.name {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0 0 4px 0;
+  color: #212529;
+}
+
+.price {
+  color: #198754;
+  font-size: 16px;
+  margin: 0;
+  font-weight: bold;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.btn-qty {
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  touch-action: manipulation;
+}
+
+.btn-minus {
+  background: #dc3545;
+}
+
+.btn-plus {
+  background: #0d6efd;
+}
+
+.btn-minus:disabled {
+  background: #e9ecef;
+  color: #adb5bd;
+  cursor: not-allowed;
+}
+
+.qty {
+  font-size: 20px;
+  font-weight: bold;
+  width: 30px;
+  text-align: center;
+  color: #212529;
+}
+
+footer {
+  flex-shrink: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 12px 16px; 
+  box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  backdrop-filter: blur(4px);
+  position: relative;
+  z-index: 10;
+}
+
+.total-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px; 
+}
+
+.total-label {
+  font-size: 16px; 
+  font-weight: bold;
+  color: #495057;
+}
+
+.total-value {
+  font-size: 24px; 
+  font-weight: bold;
+  color: #198754;
+}
+
+.payment-row {
+  display: flex;
+  gap: 12px; 
+  margin-bottom: 12px; 
+  align-items: flex-end;
+}
+
+.input-group {
+  flex: 3;
+}
+
+.input-group label {
+  display: block;
+  font-size: 12px; 
+  font-weight: bold;
+  color: #495057;
+  margin-bottom: 4px; 
+}
+
+.input-group input {
+  width: 100%;
+  padding: 8px; 
+  font-size: 16px; 
+  font-weight: bold;
+  border: 2px solid #ced4da;
+  border-radius: 8px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.change-display {
+  flex: 2;
+  text-align: right;
+}
+
+.change-label {
+  font-size: 12px; 
+  font-weight: bold;
+  color: #495057;
+  margin-bottom: 2px; 
+}
+
+.change-value {
+  font-size: 24px; 
+  font-weight: bold;
+  color: #0d6efd;
+}
+
+.change-value.error {
+  color: #dc3545;
+}
+
+.btn-finish {
+  width: 100%;
+  padding: 12px; 
+  background: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 18px; 
+  font-weight: bold;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.btn-finish:disabled {
+  background: #e9ecef;
+  color: #adb5bd;
+  cursor: not-allowed;
+}
+
+/* Botão de limpar (usado no convidados.html) */
+.btn-reset {
+  width: 100%;
+  padding: 12px; 
+  background: #6c757d;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 18px; 
+  font-weight: bold;
+  cursor: pointer;
+  touch-action: manipulation;
+}
