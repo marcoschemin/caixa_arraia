@@ -238,7 +238,7 @@ footer {
   color: white;
   border: none;
   border-radius: 6px;
-  font-size: 18px; /* Ajustado para a faixa solicitada */
+  font-size: 14px; /* Ajustado para a faixa solicitada */
   font-weight: bold;
   cursor: pointer;
   touch-action: manipulation;
