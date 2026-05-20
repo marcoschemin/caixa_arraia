@@ -26,17 +26,15 @@
       backdrop-filter: blur(4px);
     }
 
-    #scroll-area { 
-    flex: 1; overflow-y: auto; padding: 16px; 
-    		/* Use 250px no index.html e 160px no convidados.html */
-    		padding-bottom: 250px; 
-    
-   		 /* Ativa a rolagem por momento (momentum scrolling) com aceleração de hardware nativa no iOS */
+#scroll-area { 
+    flex: 1; 
+    overflow-y: auto; 
+    padding: 16px; 
+    /* Mudado de 250px para 24px, pois não precisa mais compensar o elemento fixo */
+    padding-bottom: 24px; 
     -webkit-overflow-scrolling: touch; 
-    
-   		 /* Impede que o efeito de mola no topo/fim da lista seja repassado para o body (scroll chaining) */
-    		overscroll-behavior: contain; 
-		 }
+    overscroll-behavior: contain; 
+}
 
         #product-list {
             padding: 0;
@@ -137,18 +135,19 @@
             color: #212529;
         }
 
-        footer {
-            background: rgba(255, 255, 255, 0.95);
-            padding: 20px 16px;
-            box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.2);
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            box-sizing: border-box;
-            border-top-left-radius: 16px;
-            border-top-right-radius: 16px;
-            backdrop-filter: blur(4px);
-        }
+footer { 
+    background: rgba(255, 255, 255, 0.95); 
+    padding: 20px 16px; 
+    box-shadow: 0 -4px 15px rgba(0,0,0,0.2); 
+    box-sizing: border-box; 
+    border-top-left-radius: 16px; 
+    border-top-right-radius: 16px; 
+    backdrop-filter: blur(4px);
+    
+    /* REMOVIDOS: position: fixed, bottom: 0 e width: 100% */
+    /* O Flexbox do body agora mantém o footer naturalmente colado no rodapé */
+}
+
 
         .total-row {
             display: flex;
