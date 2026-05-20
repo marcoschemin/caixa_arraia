@@ -169,7 +169,7 @@ footer {
 }
 
 .total-label {
-  font-size: 14px; 
+  font-size: 18px; 
   font-weight: bold;
   color: #495057;
 }
@@ -193,7 +193,7 @@ footer {
 
 .input-group label {
   display: block;
-  font-size: 11px; 
+  font-size: 14px; 
   font-weight: bold;
   color: #495057;
   margin-bottom: 2px; 
@@ -202,7 +202,7 @@ footer {
 .input-group input {
   width: 100%;
   padding: 6px; /* Input mais compacto */
-  font-size: 16px; /* Travado em 16px para evitar auto-zoom no iOS */
+  font-size: 20px; /* Travado em 16px para evitar auto-zoom no iOS */
   font-weight: bold;
   border: 2px solid #ced4da;
   border-radius: 6px;
@@ -216,7 +216,7 @@ footer {
 }
 
 .change-label {
-  font-size: 11px; 
+  font-size: 18px; 
   font-weight: bold;
   color: #495057;
   margin-bottom: 0; 
