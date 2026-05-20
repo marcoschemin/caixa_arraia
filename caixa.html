@@ -6,18 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Caixa - 13º Arraiá Mater</title>
   <style>
-    body {
-      font-family: system-ui, sans-serif;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      flex-direction: column;
-      height: 100vh;
-      background-image: url('fundo.jpg');
-      background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
-    }
+    body { 
+				font-family: system-ui, sans-serif; margin: 0; padding: 0; 
+				display: flex; flex-direction: column; height: 100vh; 
+				background-image: url('fundo.jpg'); background-size: cover; 
+				background-position: center; background-attachment: fixed;
+				/* Adicionado para impedir que o corpo da página role e cause o travamento */
+				overflow: hidden; 
+			}
 
     header {
       background: rgba(13, 110, 253, 0.9);
@@ -30,12 +26,17 @@
       backdrop-filter: blur(4px);
     }
 
-    #scroll-area {
-      flex: 1;
-      overflow-y: auto;
-      padding: 16px;
-      padding-bottom: 250px;
-    }
+    #scroll-area { 
+    flex: 1; overflow-y: auto; padding: 16px; 
+    		/* Use 250px no index.html e 160px no convidados.html */
+    		padding-bottom: 250px; 
+    
+   		 /* Ativa a rolagem por momento (momentum scrolling) com aceleração de hardware nativa no iOS */
+    -webkit-overflow-scrolling: touch; 
+    
+   		 /* Impede que o efeito de mola no topo/fim da lista seja repassado para o body (scroll chaining) */
+    		overscroll-behavior: contain; 
+		 }
 
     #product-list {
       padding: 0;
