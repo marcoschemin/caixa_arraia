@@ -13,7 +13,7 @@
   },
   {
     "Tipo": "Comidas",
-    "Nome": "Foundeau",
+    "Nome": "Fondue",
     "Referencia": "",
     "Preco": 15
   },
@@ -21,7 +21,7 @@
     "Tipo": "Comidas",
     "Nome": "Espeto de Morango",
     "Referencia": "",
-    "Preco": 12
+    "Preco": 15
   },
   {
     "Tipo": "Comidas",
@@ -63,7 +63,7 @@
     "Tipo": "Comidas",
     "Nome": "Crepe da Praça",
     "Referencia": "",
-    "Preco": 12
+    "Preco": 17
   },
   {
     "Tipo": "Comidas",
@@ -75,7 +75,7 @@
     "Tipo": "Comidas",
     "Nome": "Pizza",
     "Referencia": "",
-    "Preco": 15
+    "Preco": 17
   },
   {
     "Tipo": "Comidas",
