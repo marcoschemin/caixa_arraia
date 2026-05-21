@@ -55,12 +55,6 @@
   },
   {
     "Tipo": "Comidas",
-    "Nome": "Algodão doce",
-    "Referencia": "",
-    "Preco": 10
-  },
-  {
-    "Tipo": "Comidas",
     "Nome": "Crepe da Praça",
     "Referencia": "",
     "Preco": 17
@@ -93,7 +87,7 @@
     "Tipo": "Comidas",
     "Nome": "Pastel",
     "Referencia": "",
-    "Preco": 12
+    "Preco": 15
   },
   {
     "Tipo": "Comidas",
