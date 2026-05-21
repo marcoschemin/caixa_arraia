@@ -16,10 +16,13 @@ body {
 header {
   background: rgba(13, 110, 253, 0.9);
   color: white;
-  padding: 16px;
-  font-size: 22px;
+  padding: 10px 16px;
+  font-size: 20px; /* Leve redução para evitar quebra de linha com a logo maior */
   font-weight: bold;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Joga a logo e o título para o canto esquerdo */
+  gap: 16px; /* Espaçamento entre a logo e o texto */
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(4px);
   flex-shrink: 0; 
@@ -34,21 +37,21 @@ header.convidados {
   flex: 1; 
   min-height: 0; 
   overflow-y: auto; 
-  padding: 16px; 
+  /* padding: 16px; (REMOVIDO para o cabeçalho colar nas bordas) */
   padding-bottom: 24px; 
   -webkit-overflow-scrolling: touch; 
   overscroll-behavior: contain; 
 }
 
 #product-list {
-  padding: 0;
+  padding: 16px; /* O espaçamento foi movido para cá */
 }
 
-.logo-evento {
-  max-width: 140px;
-  display: block;
-  margin: 0 auto 16px auto;
-  filter: drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.5));
+.logo-header {
+  height: 60px; /* Altura aumentada para dar destaque */
+  width: auto;
+  flex-shrink: 0; /* Impede que o navegador amasse a imagem por falta de espaço */
+  filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.5));
 }
 
 .category-header {
