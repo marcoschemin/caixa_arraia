@@ -79,13 +79,13 @@
   },
   {
     "Tipo": "Comidas",
-    "Nome": "Pipoca doce",
+    "Nome": "Pipoca",
     "Referencia": "Pequeno",
     "Preco": 10
   },
   {
     "Tipo": "Comidas",
-    "Nome": "Pipoca doce",
+    "Nome": "Pipoca",
     "Referencia": "Grande",
     "Preco": 15
   },
