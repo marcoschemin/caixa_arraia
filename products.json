@@ -13,6 +13,12 @@
   },
   {
     "Tipo": "Comidas",
+    "Nome": "Maçã do amor",
+    "Referencia": "",
+    "Preco": 10
+  },
+  {
+    "Tipo": "Comidas",
     "Nome": "Fondue",
     "Referencia": "",
     "Preco": 15
